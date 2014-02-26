@@ -1,0 +1,23 @@
+{
+    "name": "mvrhov/doctrine-extensions-bundle",
+    "type": "symfony-bundle",
+    "description": "mvrhov doctrine extensions bundle",
+    "keywords": ["Doctrine extensions"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "mvrhov\\Bundle\\DoctrineExtensionsBundle\\": ""
+        }
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "doctrine/common": "~2.4",
+        "doctrine/orm": "~2.4"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

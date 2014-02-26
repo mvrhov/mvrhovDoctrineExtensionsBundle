@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="mvrhov_doctrine_extensions.timezone_setter.class">mvrhov\Bundle\DoctrineExtensionsBundle\Doctrine\TimeZoneSetter</parameter>
+        <parameter key="mvrhov_doctrine_extensions.listener.timezone.class">mvrhov\Bundle\DoctrineExtensionsBundle\Doctrine\TimeZoneListener</parameter>
+        <parameter key="mvrhov_doctrine_extensions.listener.value_object.class">mvrhov\Bundle\DoctrineExtensionsBundle\Doctrine\ValueObjectListener</parameter>
+    </parameters>
+
+    <services>
+        <service id="mvrhov_doctrine_extensions.timezone_setter" class="%mvrhov_doctrine_extensions.timezone_setter.class%">
+            <argument>UTC</argument>
+        </service>
+
+        <service id="mvrhov_doctrine_extensions.listener.timezone" class="%mvrhov_doctrine_extensions.listener.timezone.class%">
+            <argument type="service" id="mvrhov_doctrine_extensions.timezone_setter"/>
+        </service>
+
+        <service id="mvrhov_doctrine_extensions.listener.value_object" class="%mvrhov_doctrine_extensions.listener.value_object.class%">
+            <argument type="service" id="jms_serializer"/>
+        </service>
+
+    </services>
+
+</container>
