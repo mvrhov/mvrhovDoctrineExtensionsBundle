@@ -119,6 +119,10 @@ class EncryptedStringType extends Type
 
     protected function decrypt($data, $iv)
     {
+        if ('' == $data || '' == $iv) {
+            return '';
+        }
+
         if (null === $this->module) {
             $this->module = mcrypt_module_open('rijndael-256', '', 'cfb', '');
         }
