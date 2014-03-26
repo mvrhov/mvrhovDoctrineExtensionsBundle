@@ -7,6 +7,7 @@
         <parameter key="mvrhov_doctrine_extensions.timezone_setter.class">mvrhov\Bundle\DoctrineExtensionsBundle\Doctrine\TimeZoneSetter</parameter>
         <parameter key="mvrhov_doctrine_extensions.listener.timezone.class">mvrhov\Bundle\DoctrineExtensionsBundle\Doctrine\TimeZoneListener</parameter>
         <parameter key="mvrhov_doctrine_extensions.listener.value_object.class">mvrhov\Bundle\DoctrineExtensionsBundle\Doctrine\ValueObjectListener</parameter>
+        <parameter key="mvrhov_doctrine_extensions.listener.encrypted.class">mvrhov\Bundle\DoctrineExtensionsBundle\Doctrine\Encrypted</parameter>
     </parameters>
 
     <services>
@@ -22,6 +23,9 @@
             <argument type="service" id="jms_serializer"/>
         </service>
 
+        <service id="mvrhov_doctrine_extensions.listener.encrypted" class="%mvrhov_doctrine_extensions.listener.encrypted.class%">
+            <argument>%kernel.secret%</argument>
+        </service>
     </services>
 
 </container>
