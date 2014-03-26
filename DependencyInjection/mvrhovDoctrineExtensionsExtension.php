@@ -70,5 +70,12 @@ class mvrhovDoctrineExtensionsExtension extends Extension
                 $definition->addTag('doctrine.event_subscriber');
             }
         }
+        if (isset($config['encrypted']) && $config['encrypted']) {
+            $listener = sprintf($listenerTpl, 'encrypted');
+            if ($container->hasDefinition($listener)) {
+                $definition = $container->getDefinition($listener);
+                $definition->addTag('doctrine.event_listener', array('event' => 'postConnect', 'method' => 'postConnect'));
+            }
+        }
     }
 }

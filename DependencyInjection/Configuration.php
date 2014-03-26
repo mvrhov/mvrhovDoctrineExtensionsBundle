@@ -39,6 +39,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('timezone')->defaultFalse()->end()
                 ->scalarNode('value_object')->defaultFalse()->end()
+                ->scalarNode('encrypted')->defaultFalse()->end()
             ->end()
         ->end();
 
