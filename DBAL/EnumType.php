@@ -50,6 +50,9 @@ abstract class EnumType extends Type
             $max = $len > $max ? $len : $max;
         }
 
+        if (isset($fieldDeclaration['length']) && $fieldDeclaration['length'] > $max) {
+            $max = $fieldDeclaration['length'];
+        }
         $platform->markDoctrineTypeCommented($this);
 
         return $platform->getVarcharTypeDeclarationSQL(array(
