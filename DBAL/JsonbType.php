@@ -24,7 +24,7 @@
  */
 namespace mvrhov\Bundle\DoctrineExtensionsBundle\DBAL;
 
-use Doctrine\DBAL\Types\JsonArrayType;
+use Doctrine\DBAL\Types\JsonTypeBase;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\PostgreSqlPlatform;
 
@@ -34,7 +34,7 @@ use Doctrine\DBAL\Platforms\PostgreSqlPlatform;
  * @author Miha Vrhovnik <miha.vrhovnik@cordia.si>
  *
  */
-class JsonbType extends JsonArrayType
+class JsonbType extends JsonTypeBase
 {
 
     const __name = 'jsonb';
