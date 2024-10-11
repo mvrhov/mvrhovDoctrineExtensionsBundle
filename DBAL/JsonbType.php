@@ -24,7 +24,7 @@
  */
 namespace mvrhov\Bundle\DoctrineExtensionsBundle\DBAL;
 
-use Doctrine\DBAL\Types\JsonTypeBase;
+use Doctrine\DBAL\Types\JsonType as JsonTypeBase;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\PostgreSqlPlatform;
 
